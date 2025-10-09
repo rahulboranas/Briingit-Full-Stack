@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+    @apply bg-blue-50 text-neutral-700
+}
+/* src/index.css ya globals.css */
+.scrollbar-custom::-webkit-scrollbar {
+    height: 4px; 
+    width: 4px;/* horizontal scrollbar height */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.027); 
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color:rgba(128, 128, 128, 0.323);
+    border-radius: 25px;
+    /* optional, padding effect */
+}
+.scrollbar-custom-list::-webkit-scrollbar {
+    height: 4px; 
+    width: 6px;/* horizontal scrollbar height */
+}
+
+.scrollbar-custom-list::-webkit-scrollbar-track {
+    background: rgba(16, 51, 116, 0.1); 
+}
+
+.scrollbar-custom-list::-webkit-scrollbar-thumb {
+    background-color:rgba(128, 127, 127, 0.456);
+    border-radius: 25px;
+    /* optional, padding effect */
+}
+.scrollbar-custom-list-b::-webkit-scrollbar {
+    height: 4px; 
+    width: 10px;/* horizontal scrollbar height */
+}
+
+.scrollbar-custom-list-b::-webkit-scrollbar-track {
+    background: rgba(16, 51, 116, 0.1); 
+}
+
+.scrollbar-custom-list-b::-webkit-scrollbar-thumb {
+    background-color:rgba(128, 127, 127, 0.456);
+    
+    /* optional, padding effect */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+display:none;
+}
+
+
