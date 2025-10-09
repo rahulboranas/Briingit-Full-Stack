@@ -1,6 +1,6 @@
 
 import React from 'react'
-import UserMenu from './userMenu'
+import UserMenu from './UserMenu'
 import { IoCloseOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 const UserMenuMobile = () => {
