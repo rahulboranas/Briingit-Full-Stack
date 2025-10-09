@@ -6,7 +6,7 @@ body{
     font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-style: normal;
-    @apply bg-blue-50 text-neutral-700
+    @apply bg-blue-50 text-black
 }
 /* src/index.css ya globals.css */
 .scrollbar-custom::-webkit-scrollbar {
