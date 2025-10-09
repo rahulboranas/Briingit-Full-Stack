@@ -9,7 +9,7 @@ import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { GoTriangleUp } from "react-icons/go";
 import { useState } from 'react';
-import UserMenu from '../pages/userMenu';
+import UserMenu from '../pages/UserMenu';
 import { GoTriangleDown } from "react-icons/go";
 import { GiHamburgerMenu } from "react-icons/gi";
 
