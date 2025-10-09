@@ -109,7 +109,7 @@ const Home = () => {
                   alt='category'
                   className='w-full lg:h-40 bg-white rounded h-15  object-scale-down'
                 />
-                <p className='flex text-ellipsis  lg:font-base lg:text-sm text-[10px]   lg:mt-2 mt-1 line-clamp-2 justify-center'>{cat.name}</p>
+                <p className='flex text-ellipsis font-semibold  lg:font-medium lg:font-base lg:text-sm text-[10px]   lg:mt-2 mt-1 line-clamp-2 justify-center'>{cat.name}</p>
               </div>
             </div>
           ))
