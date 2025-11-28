@@ -24,9 +24,10 @@ const CardProduct = ({data}) => {
                  {/* scale-110 */}
             </div>
             <div className='flex gap-6 items-center'>
-                  <div className='  px-1  w-fit text-xs  flex items-center text-green-600 bg-green-100 animate-pulse rounded'>
-                1 Day
-            </div><div className='w-fit  rounded-lg text-sm px-1'>
+                  {/* <div className='  px-1  w-fit text-xs  flex items-center text-green-600 bg-green-100 animate-pulse rounded'>
+                7 Day
+            </div> */}
+            <div className='w-fit bg-gray-200  rounded-sm border border-gray-300 text-sm px-4'>
                 {data.unit}
             </div>
             </div>

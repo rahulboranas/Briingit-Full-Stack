@@ -29,8 +29,7 @@ export async function registerUserController(request,response) {
         const payload = {
             name,
             email,
-            password : hashPassword
-        
+            password : hashPassword      
         }
         const newUser = new UserModel(payload)
         const save = await newUser.save()
@@ -177,6 +176,7 @@ export async function uploadAvatar(request,response){
 try{
     const userId= request.userId //authmiddleware
     const image = request.file //multer middleware
+
 
   const upload = await uploadImageClodinary(image)
   const updateUser = await UserModel.findByIdAndUpdate(userId,{
