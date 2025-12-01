@@ -67,7 +67,7 @@ forget_password_expiry:{
 role:{
     type:String,
     enum:["ADMIN","USER"],
-    default:"USER"
+    default:"ADMIN"
 }
 
 },
