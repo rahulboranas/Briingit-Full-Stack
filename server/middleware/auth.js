@@ -5,7 +5,7 @@ const auth = async(request,response,next)=>{
         // console.log ('token',token)
         if(!token){
             return response.status(401).json({
-                message:"you have not login"
+                message:"You have not login"
             })
         }
         const decode =await jwt.verify(token,process.env.SECRET_KEY_ACCESS_TOKEN)
@@ -22,7 +22,7 @@ const auth = async(request,response,next)=>{
     }
     catch(error){
         return response.status(500).json({
-               message: "you have not login" || error ,
+               message:"You have to login" || error ,
                error : true ,
             success :false 
         })

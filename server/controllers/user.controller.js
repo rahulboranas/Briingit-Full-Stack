@@ -119,7 +119,8 @@ export async function loginController(request,response){
         const accessToken = await generateAccessToken(user._id)
         const refreshToken = await generatedRefreshToken(user._id)
         const updateUser = await UserModel.findByIdAndUpdate(user?._id,{
-            last_login_date : new Date()
+            last_login_date : new Date(),
+             currentStatus : "ONLINE"  
         })
         const cookiesOption = {
             httpOnly :true,
@@ -156,7 +157,7 @@ export async function logoutController(request,response){
     }
      response.clearCookie("accessToken",cookiesOption)
      response.clearCookie("refreshToken",cookiesOption)
-     const removeRefreshToken = await UserModel.findByIdAndUpdate(userid,{refresh_token : ""})
+     const removeRefreshToken = await UserModel.findByIdAndUpdate(userid,{refresh_token : "", currentStatus: "OFFLINE"  })
      return response.json({
         message:"logout successfully",
         error:false,

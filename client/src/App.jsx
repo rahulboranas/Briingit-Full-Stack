@@ -77,11 +77,12 @@ function App() {
   //           console.log
   //         }
   //       }
+
   useEffect(() => {
     fetchUser()
     fetchCategory()
     fetchSubCategory()
-    // fetchCartItem()
+   
   }, [])
  
   return (<GlobalProvider>
@@ -102,6 +103,8 @@ function App() {
   </GlobalProvider>
 
   )
+
+   
 }
 
 export default App 

@@ -29,10 +29,10 @@ const CheckoutPage = () => {
 const response = await Axios({
   ...SummeryApi.CashOnDeliveryOrder,
   data:{
-      list_items : cartItemList,
+      // list_items : cartItemList,
       addressId:addressList[selectAddress]?._id,
       subTotalAmt:totalPrice,
-      totalAmt:totalPrice,
+     
   }
 })
 const {data : responseData} = response

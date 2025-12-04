@@ -24,6 +24,7 @@ import CheckoutPage from "../pages/CheckoutPage"
 import Success from "../pages/Success"
 import Cancel from "../pages/Cancel"
 import AboutUsPage from "../pages/AboutUsPage"
+import AllOrder from "../pages/AllOrder"
 // import LoginSuccess from "../pages/LoginSuccess"
 const router = createBrowserRouter([
     {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
             { 
                 path:"about-us",
                 element:<AboutUsPage/>
+            },
+             {
+                path:"all-order",
+                element:<AdminPermission><AllOrder/></AdminPermission>
             }
            
 

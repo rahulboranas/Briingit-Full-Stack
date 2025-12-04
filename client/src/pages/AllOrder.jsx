@@ -3,7 +3,7 @@ import Axios from "../utils/Axios";
 import SummeryApi from "../common/SummeryApi";
 import toast from "react-hot-toast";
 import AxiosToastError from "../utils/AxiosToastError";
-import NoData from "../components/NoData";
+
 const statusColors = {
   PENDING: "bg-yellow-100 text-yellow-700",
   PAID: "bg-green-100 text-green-700",
@@ -15,15 +15,15 @@ const statusColors = {
   CANCELLED: "bg-red-100 text-red-700",
 };
 
-const MyOrders = () => {
+const AllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await Axios({ ...SummeryApi.getAllOrderAsPerUser});
-console.log("response data ",response)
+      const response = await Axios({ ...SummeryApi.getAllOrders });
+
       if (response.data.success) {
         setOrders(response.data.data);
       } else {
@@ -52,11 +52,11 @@ console.log("response data ",response)
     <div className="p-4 max-w-full mx-auto">
 
       <h1 className="text-xl font-semibold mb-4 text-blue-600 shadow p-2 rounded">
-        My Order
+        All Orders
       </h1>
 
       {orders.length === 0 && (
-        <div className=""><NoData/></div>
+        <div className="text-center text-gray-500 mt-10">No Orders Found ❌</div>
       )}
 
       <div className="space-y-4">
@@ -145,8 +145,7 @@ console.log("response data ",response)
 
             <hr className="my-2" />
 
-          
-            {/* TOTAL + CREATED DATE */}
+         {/* TOTAL + CREATED DATE */}
 <div className="flex justify-between items-center">
   <div className="text-gray-700">
     Payment Method: <span className="font-semibold">{order.paymentMethod}</span>
@@ -176,5 +175,4 @@ console.log("response data ",response)
   );
 };
 
-export default MyOrders;
-
+export default AllOrders;

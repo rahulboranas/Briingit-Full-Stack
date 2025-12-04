@@ -38,6 +38,12 @@ status:{
     enum:["Active","Inactive","Suspended"],
     default:"Active"
 },
+ // ⭐⭐⭐ YOUR NEW FIELD (ONLINE / OFFLINE)
+    currentStatus:{
+        type:String,
+        enum:["ONLINE","OFFLINE"],
+        default:"OFFLINE"
+    },
 address_details:[
     {
         type:mongoose.Schema.ObjectId,

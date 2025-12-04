@@ -9,6 +9,7 @@ import toast from 'react-hot-toast'
 import AxiosToastError from '../utils/AxiosToastError'
 import { FaExternalLinkAlt } from "react-icons/fa";
 import isAdmin from '../utils/IsAdmin'
+
 const UserMenu = ({ close }) => {
   const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
@@ -39,6 +40,7 @@ const UserMenu = ({ close }) => {
       close()
     }
   }
+
   return (
     <div>
       <div className='font-semibold'>My Account</div>
@@ -66,11 +68,18 @@ const UserMenu = ({ close }) => {
      <Link onClick={handleClose} to={"/dashboard/product"} className='px-2  hover:bg-orange-200 py-1'>Product</Link>
       )
      }
-         
+
+ 
+ <Link onClick={handleClose} to={"/dashboard/myorders"} className='px-2  hover:bg-orange-200 py-1'>My Orders</Link> 
+ 
       
-        <Link onClick={handleClose} to={"/dashboard/myorders"} className='px-2  hover:bg-orange-200 py-1'>My Orders</Link>
         <Link onClick={handleClose} to={"/dashboard/address"} className='px-2  hover:bg-orange-200 py-1' > Save Address</Link>
   <Link onClick={handleClose} to={"/dashboard/about-us"} className='px-2  hover:bg-orange-200 py-1' >About Us</Link>
+     {
+      isAdmin(user.role) && (
+     <Link onClick={handleClose} to={"/dashboard/all-order"} className='px-2  hover:bg-orange-200 py-1'>All Orders</Link>
+      )
+     }
         <button onClick={handleLogout} className='text-left px-2 hover:bg-orange-200 py-1'>Log Out</button>
       </div>
 

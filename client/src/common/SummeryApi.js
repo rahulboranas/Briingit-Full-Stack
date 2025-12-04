@@ -149,6 +149,14 @@ method:"post"
     getOrderItems : {
         url:"/api/order/order-list",
         method:'get'
+    },
+    getAllOrders : {
+        url:"/api/allorder/get_all_order",
+        method:'get'
+    },
+    getAllOrderAsPerUser:{
+        url:"/api/allorder/get_all_order_as_per_user",
+        method:'get'
     }
 }
 export default SummeryApi
