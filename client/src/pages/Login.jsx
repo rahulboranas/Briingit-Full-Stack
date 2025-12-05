@@ -125,14 +125,14 @@ const Login = () => {
                     <button disabled={!valideValue} className={`${valideValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500"} text-white py-2 rounded font-semibold my-3 tracking-wide`}>Login</button>
                 </form>
                 <p>Don't have an account ? <Link to="/register"className='font-semibold text-green-700 hover:text-green-800'>Register</Link> </p>
-           <button
+           {/* <button
   
   type="button"
   className="w-full  border border-green-600 text-gray-700 gap-5 py-2
    flex rounded items-center justify-center font-semibold mt-2 hover:rounded-full"
 >
  <FcGoogle size={25}/> Continue with Google
-</button>  
+</button>   */}
             </div>
         </section>
     )
