@@ -11,6 +11,7 @@ import Slider from "react-slick"
 // ⚡ slick-carousel CSS import (important)
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import CategoryCardComponent from '../components/CategoryCardComponent'
 
 const Home = () => {
   const loadingCategory = useSelector(state => state.product.loadingCategory)
@@ -88,7 +89,7 @@ const Home = () => {
       </div>
 
       {/* Category section */}
-      <div className='container gap-2 mx-auto px-4 my-2 grid grid-cols-4 md:grid-cols-8 lg:grid-cols-10'>
+      <div className='container gap-2  mx-auto px-4 my-2 grid grid-cols-3 md:grid-cols-8 lg:grid-cols-10'>
         {loadingCategory ? (
           new Array(20).fill(null).map((_, index) => (
             <div key={index} className='bg-white rounded p-4 animate-pulse min-h-36 grid gap-2 shadow-md'>
@@ -103,14 +104,8 @@ const Home = () => {
               className='w-full h-full cursor-pointer'
               onClick={() => handleRedirectProductListPage(cat._id, cat.name)}
             >
-              <div className='bg-blue-100 hover:bg-blue-50 rounded lg:p-2 p-2 lg:h-55 h-28 '>
-                <img
-                  src={cat.image}
-                  alt='category'
-                  className='w-full lg:h-40 bg-white rounded h-15  object-scale-down'
-                />
-                <p className='flex text-ellipsis font-semibold  lg:font-medium lg:font-base lg:text-sm text-[10px]   lg:mt-2 mt-1 line-clamp-2 justify-center'>{cat.name}</p>
-              </div>
+             
+              <CategoryCardComponent cat={cat}/>
             </div>
           ))
         )}
