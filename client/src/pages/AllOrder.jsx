@@ -26,7 +26,6 @@ const AllOrders = () => {
 
       if (response.data.success) {
         setOrders(response.data.data);
-        
       } else {
         toast.error("Failed to load orders");
       }
@@ -38,9 +37,7 @@ const AllOrders = () => {
   };
 
   useEffect(() => {
-    console.log("resonsedata",orders)
     fetchOrders();
-    
   }, []);
 
   if (loading) {
@@ -52,63 +49,66 @@ const AllOrders = () => {
   }
 
   return (
-    <div className="p-4 max-w-full mx-auto">
-
-      <h1 className="text-xl font-semibold mb-4 text-blue-600 shadow p-2 rounded">
-        All Orders
+    <div className="p-4 bg-orange-50 max-w-full mx-auto">
+      
+      {/* ORANGE HEADER */}
+      <h1 className="text-2xl font-bold mb-6 text-white bg-orange-600 px-4 py-3 rounded-xl shadow">
+         All Orders
       </h1>
 
       {orders.length === 0 && (
-        <div className="text-center text-gray-500 mt-10">No Orders Found ❌</div>
+        <div className="text-center text-gray-500 mt-10 text-lg">
+          No Orders Found 
+        </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-6">
 
         {orders.map((order) => (
           <div
             key={order._id}
-            className="border rounded-lg shadow-sm p-4 bg-white"
+            className="border border-orange-200 shadow-md rounded-xl p-5 bg-white hover:shadow-xl transition-all duration-300"
           >
-            {/* USER */}
-            <div className="mb-2">
- <h5 className=" text-sm bg-blue-100 border border-blue-500 rounded-2xl px-5 py-1"> Order_ID: #{order?._id}</h5>
-              <h2 className="font-semibold text-lg"> {order.userInfo?.name}</h2>
-              <p className="text-sm text-gray-600">{order.userInfo?.email}</p>
-              {order.userInfo?.mobile && (
-                <p className="text-sm text-gray-600">
-                  Mobile: {order.userInfo.mobile}
-                </p>
-              )}
+            {/* ORDER HEADER */}
+            <div className="flex justify-between items-center mb-4">
+              <div>
+                <h5 className="text-sm font-semibold bg-orange-100 text-orange-700 border border-orange-400 rounded-full px-4 py-1 inline-block">
+                  Order ID: #{order._id}
+                </h5>
+                <h2 className="font-bold text-xl mt-2 text-gray-900">
+                  {order.userInfo?.name}
+                </h2>
+                <p className="text-sm text-gray-600">{order.userInfo?.email}</p>
+                {order.userInfo?.mobile && (
+                  <p className="text-sm text-gray-600">
+                    Mobile: {order.userInfo.mobile}
+                  </p>
+                )}
+              </div>
             </div>
 
             {/* STATUS SECTION */}
-            <div className="flex gap-3 mb-3">
-
-              {/* Payment Status */}
+            <div className="flex flex-wrap gap-3 mb-3">
               <div
-                className={`px-3 py-1 rounded text-sm font-semibold ${
-                  statusColors[order.paymentStatus]
-                }`}
+                className={`px-3 py-1 rounded-lg text-sm font-semibold shadow-sm ${statusColors[order.paymentStatus]}`}
               >
                 Payment: {order.paymentStatus}
               </div>
 
-              {/* Order Status */}
               <div
-                className={`px-3 py-1 rounded text-sm font-semibold ${
-                  statusColors[order.orderStatus]
-                }`}
+                className={`px-3 py-1 rounded-lg text-sm font-semibold shadow-sm ${statusColors[order.orderStatus]}`}
               >
                 Status: {order.orderStatus}
               </div>
-
             </div>
 
-            <hr className="my-2" />
+            <hr className="my-3" />
 
             {/* ADDRESS */}
-            <div className="text-sm mb-2">
-              <p className="font-medium text-gray-800"> Delivery Address:</p>
+            <div className="text-sm mb-3">
+              <p className="font-semibold text-gray-800 mb-1">
+                 Delivery Address:
+              </p>
               <p>{order.deliveryAddress.address_line}</p>
               <p>
                 {order.deliveryAddress.city}, {order.deliveryAddress.state}
@@ -120,60 +120,61 @@ const AllOrders = () => {
               <p>Mobile: {order.deliveryAddress.mobile}</p>
             </div>
 
-            <hr className="my-2" />
+            <hr className="my-3" />
 
             {/* PRODUCTS */}
             <div className="space-y-2">
-              <p className="font-medium text-gray-800 mb-1">🛒 Products:</p>
+              <p className="font-semibold text-gray-800 mb-1">🛍 Products:</p>
 
               {order.products.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 border rounded-md p-2"
+                  className="flex items-center gap-3 border border-gray-200 rounded-lg p-3 shadow-sm"
                 >
                   <img
                     src={item.image?.[0]}
-                    className="w-14 h-14 rounded object-cover"
+                    className="w-16 h-16 rounded object-cover border"
                     alt="product"
                   />
 
                   <div>
-                    <p className="font-medium">{item.name}</p>
+                    <p className="font-semibold text-gray-900">{item.name}</p>
                     <p className="text-sm text-gray-600">
-                      Price: ₹{item.price} × {item.quantity}
+                      ₹{item.price} × {item.quantity}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <hr className="my-2" />
+            <hr className="my-3" />
 
-         {/* TOTAL + CREATED DATE */}
-<div className="flex justify-between items-center">
-  <div className="text-gray-700">
-    Payment Method: <span className="font-semibold">{order.paymentMethod}</span>
-  </div>
+            {/* TOTAL */}
+            <div className="flex justify-between items-center">
+              <div className="text-gray-700">
+                Payment Method:{" "}
+                <span className="font-semibold">{order.paymentMethod}</span>
+              </div>
 
-  <div className="text-right">
-    <p className="text-green-700 font-semibold text-lg">
-      ₹{order.totalAmount}
-    </p>
-    <p className="text-sm text-gray-500">
-      Ordered on: {new Date(order.createdAt).toLocaleString("en-IN", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      })}
-    </p>
-  </div>
-</div>
-
-
+              <div className="text-right">
+                <p className="text-green-700 font-extrabold text-xl">
+                  ₹{order.totalAmount}
+                </p>
+                <p className="text-sm text-gray-500">
+                  Ordered on:{" "}
+                  {new Date(order.createdAt).toLocaleString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
+              </div>
+            </div>
           </div>
         ))}
+
       </div>
     </div>
   );

@@ -49,9 +49,9 @@ console.log("response data ",response)
   }
 
   return (
-    <div className="p-4 max-w-full mx-auto">
+    <div className="p-4 bg-orange-50 max-w-full mx-auto">
 
-      <h1 className="text-xl font-semibold mb-4 text-blue-600 shadow p-2 rounded">
+      <h1 className="text-2xl font-bold mb-6 text-white bg-orange-600 px-4 py-3 rounded-xl shadow">
         My Order
       </h1>
 
@@ -59,16 +59,16 @@ console.log("response data ",response)
         <div className=""><NoData/></div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-4 ">
 
         {orders.map((order) => (
           <div
             key={order._id}
-            className="border rounded-lg shadow-sm p-4 bg-white"
+            className="border border-orange-100 rounded-lg shadow-sm p-4 bg-white"
           >
             {/* USER */}
             <div className="mb-2">
-               <h5 className=" text-sm bg-blue-100 border border-blue-500 rounded-2xl px-5 py-1"> Order_ID: #{order?._id}</h5>
+               <h5 className=" text-sm bg-orange-100 border border-orange-500 rounded-2xl pl-3 py-1"> Order_ID: #{order?._id}</h5>
               <h2 className="font-semibold text-lg"> {order.userInfo?.name}</h2>
               <p className="text-sm text-gray-600">{order.userInfo?.email}</p>
               {order.userInfo?.mobile && (

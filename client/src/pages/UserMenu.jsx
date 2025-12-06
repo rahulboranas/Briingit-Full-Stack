@@ -80,6 +80,7 @@ const UserMenu = ({ close }) => {
      <Link onClick={handleClose} to={"/dashboard/all-order"} className='px-2  hover:bg-orange-200 py-1'>ALL ORDERS</Link>
       )
      }
+       <Link onClick={handleClose} to={"/dashboard/supportPage"} className='px-2  hover:bg-orange-200 py-1' >CUSTOMER SUPPORT</Link>
         <Link onClick={handleClose} to={"/dashboard/returnPolicy"} className='px-2  hover:bg-orange-200 py-1' >RETURN POLICY</Link>
           <Link onClick={handleClose} to={"/dashboard/offlineStore"} className='px-2  hover:bg-orange-200 py-1' >OFFLINE STORE</Link>
         <button onClick={handleLogout} className='text-left px-2 hover:bg-orange-200 py-1'>LOG OUT</button>

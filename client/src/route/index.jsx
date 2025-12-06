@@ -27,6 +27,7 @@ import AboutUsPage from "../pages/AboutUsPage"
 import AllOrder from "../pages/AllOrder"
 import ReturnPolicy from "../pages/ReturnPolicy"
 import OfflineStore from "../pages/OfflineStore"
+import SupportPage from "../pages/SupportPage"
 // import LoginSuccess from "../pages/LoginSuccess"
 const router = createBrowserRouter([
     {
@@ -113,6 +114,10 @@ const router = createBrowserRouter([
             },{
                 path:"offlineStore",
                 element:<OfflineStore/>
+            },
+            {
+                path:"supportPage",
+                element:<SupportPage/>
             }
            
 
