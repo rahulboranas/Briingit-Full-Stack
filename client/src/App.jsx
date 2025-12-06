@@ -84,7 +84,9 @@ function App() {
     fetchSubCategory()
    
   }, [])
- 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
   return (<GlobalProvider>
     <Header />
     <main className='min-h-[78vh]'>

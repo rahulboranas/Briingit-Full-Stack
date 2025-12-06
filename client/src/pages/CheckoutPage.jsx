@@ -11,7 +11,7 @@ import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import OnlineDisable from '../components/OnlineDisable'
 import { IoMdClose } from "react-icons/io";
-
+import { BsExclamationTriangle } from "react-icons/bs";
 
 const CheckoutPage = () => {
   const { notDiscountPrice, totalPrice, totalQty ,fetchCartItem,fetchOrder } = useGlobalContext()
@@ -19,7 +19,7 @@ const CheckoutPage = () => {
   const addressList = useSelector(state => state.addresses.addressList)
   const [selectAddress, setSelectAddress] = useState(0)
   const cartItemList = useSelector(state => state.cartItem.cart)
-  const [onlineDisable,setOnlineDisable]=useState(false)
+ 
   const navigate = useNavigate()
 
   
@@ -121,13 +121,23 @@ let handleClose=()=>{
               <p className='flex items-center gap-2'>{DisplayPriceInRupees(totalPrice)}</p>
             </div>
             <div className='flex w-full max-w-sm flex-col gap-2'>
-              <button onClick={()=>setOnlineDisable(true)} className='py-2 mt-2 px-4 bg-green-600 text-white hover:bg-green-700 rounded'>Online Payment</button>
-              <button onClick={handleCashOnDelivery} className='py-2 px-4  font-semibold hover:bg-green-600 text-gray-700 hover:text-white rounded border-2 border-green-500 '>Cash on Dilevery</button>
-           {
+                  <button onClick={handleCashOnDelivery} className='py-2 px-4  font-semibold hover:bg-green-600 text-gray-700 hover:text-white rounded border-2 border-green-500 '>Cash on Dilevery</button>
+              <button
+    disabled
+    className="py-3 px-4 rounded-lg bg-gray-200 cursor-not-allowed text-gray-700 flex items-center justify-between"
+  >
+    <span>Online Payment</span>
+
+    <span className="flex items-center gap-1 text-sm">
+      <BsExclamationTriangle className="text-yellow-500" />
+      Coming Soon
+    </span>
+  </button>
+           {/* {
             onlineDisable && (
               <OnlineDisable close={()=>setOnlineDisable(false)}/>
             )
-           }
+           } */}
             </div>
 
           </div>
