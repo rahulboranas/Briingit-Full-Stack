@@ -14,6 +14,8 @@ import "slick-carousel/slick/slick-theme.css"
 import CategoryCardComponent from '../components/CategoryCardComponent'
 
 const Home = () => {
+ 
+
   const loadingCategory = useSelector(state => state.product.loadingCategory)
   const categoryData = useSelector(state => state.product.allCategory)
   const subCategoryData = useSelector(state => state.product.allSubCategory)
@@ -45,10 +47,11 @@ const Home = () => {
     slidesToScroll: 1
   }
 
+
   return (
     <section className='bg-white'>
       <div className='container mx-auto'>
-        <div className={`w-full h-full min-h-48 bg-blue-100 rounded ${!banner && "animate-pulse my-2"}`}>
+        <div className={`w-full  h-full bg-white rounded ${!banner && "animate-pulse my-2"}`}>
 
           {/* Desktop slider */}
           <div className="hidden lg:block">
@@ -79,12 +82,47 @@ const Home = () => {
               ))}
             </Slider>
           </div>
-          
-          {/* <img
-            src={mobilebanner}
-            className='w-full h-full lg:hidden object-cover rounded'
-            alt='banner'
-          /> */}
+<div
+  className="overflow-hidden whitespace-nowrap  mb-4 "
+  style={{
+    background: "linear-gradient(90deg, #000000, #001a33, #003366)",
+  }}
+>
+  <style>
+    {`
+      @keyframes marqueeScroll {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    `}
+  </style>
+
+  {/* Main track */}
+  <div
+    className="flex"
+    style={{
+      width: "200%",
+      animation: "marqueeScroll 12s linear infinite",
+    }}
+  >
+    {/* FIRST COPY */}
+    <p className="text-white text-[15px] tracking-wide font-semibold py-1 lg:py-2 pr-10">
+      Currently we deliver only in Virar, Vasai, Nallasopara &nbsp; &nbsp; &nbsp; &nbsp;
+      Currently we deliver only in Virar, Vasai, Nallasopara &nbsp; &nbsp; &nbsp; &nbsp;
+       Currently we deliver only in Virar, Vasai, Nallasopara &nbsp; &nbsp; &nbsp; &nbsp;
+    </p>
+
+    {/* SECOND COPY (mirror for smooth loop) */}
+    <p className="text-white text-[15px] tracking-wide font-semibold py-1 lg:py-2 pr-10">
+       Currently we deliver only in Virar, Vasai, Nallasopara &nbsp; &nbsp; &nbsp; &nbsp;
+       Currently we deliver only in Virar, Vasai, Nallasopara &nbsp; &nbsp; &nbsp; &nbsp;
+       Currently we deliver only in Virar, Vasai, Nallasopara &nbsp; &nbsp; &nbsp; &nbsp;
+    </p>
+  </div>
+</div>
+
+
+
         </div>
       </div>
 

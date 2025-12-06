@@ -25,6 +25,8 @@ import Success from "../pages/Success"
 import Cancel from "../pages/Cancel"
 import AboutUsPage from "../pages/AboutUsPage"
 import AllOrder from "../pages/AllOrder"
+import ReturnPolicy from "../pages/ReturnPolicy"
+import OfflineStore from "../pages/OfflineStore"
 // import LoginSuccess from "../pages/LoginSuccess"
 const router = createBrowserRouter([
     {
@@ -104,6 +106,13 @@ const router = createBrowserRouter([
              {
                 path:"all-order",
                 element:<AdminPermission><AllOrder/></AdminPermission>
+            },
+            {
+                path:"returnPolicy",
+                element:<ReturnPolicy/>
+            },{
+                path:"offlineStore",
+                element:<OfflineStore/>
             }
            
 

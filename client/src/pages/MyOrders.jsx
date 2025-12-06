@@ -68,7 +68,8 @@ console.log("response data ",response)
           >
             {/* USER */}
             <div className="mb-2">
-              <h2 className="font-semibold text-lg">👤 {order.userInfo?.name}</h2>
+               <h5 className=" text-sm bg-blue-100 border border-blue-500 rounded-2xl px-5 py-1"> Order_ID: #{order?._id}</h5>
+              <h2 className="font-semibold text-lg"> {order.userInfo?.name}</h2>
               <p className="text-sm text-gray-600">{order.userInfo?.email}</p>
               {order.userInfo?.mobile && (
                 <p className="text-sm text-gray-600">
@@ -104,7 +105,7 @@ console.log("response data ",response)
 
             {/* ADDRESS */}
             <div className="text-sm mb-2">
-              <p className="font-medium text-gray-800">📍 Delivery Address:</p>
+              <p className="font-medium text-gray-800"> Delivery Address:</p>
               <p>{order.deliveryAddress.address_line}</p>
               <p>
                 {order.deliveryAddress.city}, {order.deliveryAddress.state}

@@ -67,9 +67,39 @@ const [openCartSection,setOpenCartSection]=useState(false)
           <div className='container mx-auto flex items-center  px-2 justify-between'>
             {/* logo */}
             <div className='h-full'>
-              <Link to={"/"} className='h-full flex justify-center items-center'>
-                <img src={logo} width={170} height={60} alt="logo" className='hidden lg:block' />
-                <img src={logo} width={120} height={60} alt="logo" className='lg:hidden' />
+              <Link to={"/"} className='h-full py-1 flex justify-center items-center'>
+                {/* <img src={logo} width={170} height={60} alt="logo" className='hidden lg:block' />
+                <img src={logo} width={120} height={60} alt="logo" className='lg:hidden' /> */}
+             
+
+
+  {/* Desktop Logo */}
+  <span
+    className="hidden lg:block  font-extrabold text-3xl tracking-wide"
+    style={{
+      background: "linear-gradient(90deg, #ff3d00, #ff6a00, #ff8f00)",
+      WebkitBackgroundClip: "text",
+      color: "transparent",
+    }}
+  >
+    BriingIt
+  </span>
+
+  {/* Mobile Logo */}
+  <span
+    className="lg:hidden font-extrabold text-2xl  tracking-wide"
+    style={{
+      background: "linear-gradient(90deg, #ff3d00, #ff6a00, #ff8f00)",
+      WebkitBackgroundClip: "text",
+      color: "transparent",
+    }}
+  >
+    BriingIt
+  </span>
+
+
+
+ 
               </Link>
             </div>
 
