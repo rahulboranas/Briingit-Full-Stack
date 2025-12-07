@@ -71,7 +71,11 @@ const Login = () => {
     const handleGoogleLogin = useGoogleLogin({
   onSuccess: async (tokenResponse) => {
     // Redirect to backend for token exchange
-    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${import.meta.env.VITE_GOOGLE_CLIENT_ID}&redirect_uri=http://localhost:8080/api/user/google/callback&response_type=code&scope=openid%20email%20profile`;
+//    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${
+//   import.meta.env.VITE_GOOGLE_CLIENT_ID
+// }&redirect_uri=https://briingit-full-stack.vercel.app/api/user/google/callback&response_type=code&scope=openid%20email%20profile`;
+window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${import.meta.env.VITE_GOOGLE_CLIENT_ID}&redirect_uri=https://briingit-full-stack.vercel.app/api/user/google/callback&response_type=code&scope=openid%20email%20profile`;
+
   },
   onError: () => toast.error("Google login failed"),
 });
