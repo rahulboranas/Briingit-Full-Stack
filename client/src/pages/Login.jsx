@@ -68,13 +68,13 @@ const Login = () => {
    }
   
     }
-//     const handleGoogleLogin = useGoogleLogin({
-//   onSuccess: async (tokenResponse) => {
-//     // Redirect to backend for token exchange
-//     window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${import.meta.env.VITE_GOOGLE_CLIENT_ID}&redirect_uri=http://localhost:8080/api/user/google/callback&response_type=code&scope=openid%20email%20profile`;
-//   },
-//   onError: () => toast.error("Google login failed"),
-// });
+    const handleGoogleLogin = useGoogleLogin({
+  onSuccess: async (tokenResponse) => {
+    // Redirect to backend for token exchange
+    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${import.meta.env.VITE_GOOGLE_CLIENT_ID}&redirect_uri=http://localhost:8080/api/user/google/callback&response_type=code&scope=openid%20email%20profile`;
+  },
+  onError: () => toast.error("Google login failed"),
+});
    
     return (
         <section className='w-full container mx-auto px-2'>
@@ -125,14 +125,14 @@ const Login = () => {
                     <button disabled={!valideValue} className={`${valideValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500"} text-white py-2 rounded font-semibold my-3 tracking-wide`}>Login</button>
                 </form>
                 <p>Don't have an account ? <Link to="/register"className='font-semibold text-green-700 hover:text-green-800'>Register</Link> </p>
-           {/* <button
+           <button onClick={()=>handleGoogleLogin()}
   
   type="button"
   className="w-full  border border-green-600 text-gray-700 gap-5 py-2
    flex rounded items-center justify-center font-semibold mt-2 hover:rounded-full"
 >
  <FcGoogle size={25}/> Continue with Google
-</button>   */}
+</button>  
             </div>
         </section>
     )
@@ -144,7 +144,7 @@ export default Login
 
 
 
-//import React, { useState } from 'react'
+// import React, { useState } from 'react'
 // import toast from 'react-hot-toast';
 // import { Link, Navigate, useNavigate } from 'react-router-dom';
 // import { FaEye } from "react-icons/fa";

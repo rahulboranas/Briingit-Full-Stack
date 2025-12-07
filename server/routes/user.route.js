@@ -3,7 +3,7 @@ import { forgotPasswordController, loginController, logoutController, refreshTok
 import auth from "../middleware/auth.js";
 
 import upload from "../middleware/multer.js";
-// import { googleAuthController } from "../controllers/googleauth.controller.js";
+import { googleAuthController } from "../controllers/googleauth.controller.js";
 const userRouter = Router();
 userRouter.post("/register",registerUserController)
 userRouter.post("/verify-email",verifyEmailController)
@@ -16,5 +16,5 @@ userRouter.put("/verify-forgot-password-otp",varifyForgetPasswordOtp)
 userRouter.put("/reset-password",resetpassword)
 userRouter.post("/refresh-token",refreshToken)
 userRouter.get("/user-details",auth,setUserDetails)
-// userRouter.get('/google/callback',googleAuthController)
+userRouter.get('/google/callback',googleAuthController)
 export default userRouter 

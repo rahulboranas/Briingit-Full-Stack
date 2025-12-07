@@ -28,7 +28,7 @@ import AllOrder from "../pages/AllOrder"
 import ReturnPolicy from "../pages/ReturnPolicy"
 import OfflineStore from "../pages/OfflineStore"
 import SupportPage from "../pages/SupportPage"
-// import LoginSuccess from "../pages/LoginSuccess"
+import LoginSuccess from "../pages/LoginSuccess"
 const router = createBrowserRouter([
     {
         path : "/",
@@ -46,10 +46,10 @@ const router = createBrowserRouter([
             path : "login",
             element : <Login/>
             },
-            // {
-            //    path:"login-success",
-            //    element:<LoginSuccess/>
-            // },
+            {
+               path:"login-success",
+               element:<LoginSuccess/>
+            },
             {
                 path : "register",
                 element : <Register/>
