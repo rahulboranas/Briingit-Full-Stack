@@ -74,7 +74,7 @@ const Login = () => {
 //    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${
 //   import.meta.env.VITE_GOOGLE_CLIENT_ID
 // }&redirect_uri=https://briingit-full-stack.vercel.app/api/user/google/callback&response_type=code&scope=openid%20email%20profile`;
-window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${import.meta.env.VITE_GOOGLE_CLIENT_ID}&redirect_uri=https://briingit-full-stack.vercel.app/api/user/google/callback&response_type=code&scope=openid%20email%20profile`;
+window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${import.meta.env.VITE_GOOGLE_CLIENT_ID}&redirect_uri=https://briingit-full-stack.vercel.app/api/user/google/callback&response_type=code&scope=openid email profile&prompt=select_account`;
 
   },
   onError: () => toast.error("Google login failed"),
