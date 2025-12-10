@@ -73,7 +73,7 @@ const Login = () => {
         // set user in Redux
         dispatch(setUserDetails(result.data.user));
 
-       toast.success("Logged in successfully with Google!");
+       toast.success(" loggined");
 
 setTimeout(() => {
   navigate("/");
