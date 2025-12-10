@@ -28,7 +28,7 @@ import AllOrder from "../pages/AllOrder"
 import ReturnPolicy from "../pages/ReturnPolicy"
 import OfflineStore from "../pages/OfflineStore"
 import SupportPage from "../pages/SupportPage"
-import NotFound from "../pages/NotFound"
+
 // import LoginSuccess from "../pages/LoginSuccess"
 const router = createBrowserRouter([
     {
@@ -153,10 +153,7 @@ element:<CheckoutPage/>
             path:"cancel",
             element:<Cancel/>
           },
-          {
-    path: "*",
-    element: <NotFound/>
-}
+         
 
         ]
     }
