@@ -52,7 +52,7 @@ const Login = () => {
         setData({ email: "", password: "" });
         setTimeout(() => {
   navigate("/");
-}, 1800);
+}, 2000);
 
       }
     } catch (error) {
@@ -77,7 +77,7 @@ const Login = () => {
 
 setTimeout(() => {
   navigate("/");
-}, 1800);
+},2000);
 
       }
     } catch (error) {
