@@ -11,7 +11,7 @@ email:{
 },
 password:{
     type:String,
-    required:[true,"Provide password"]
+    
 },
 avatar:{
     type:String,

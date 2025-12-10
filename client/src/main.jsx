@@ -20,8 +20,6 @@ import { store } from './store/store.js'
 import router from './route/index.jsx'
 import App from './App.jsx'
 import './index.css'
-
-// 👇 Import GoogleOAuthProvider
 import { GoogleOAuthProvider } from '@react-oauth/google'
 
 createRoot(document.getElementById('root')).render(

@@ -1,6 +1,7 @@
 import axios from "axios";
 import SummeryApi, { baseURL } from "../common/SummeryApi";
 
+export const googleAuth = (code) => Axios.get(`/auth/google?code=${code}`);
 const Axios = axios.create({
     baseURL: baseURL,
     withCredentials: true

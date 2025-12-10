@@ -15,6 +15,7 @@ import cartRouter from "./routes/cart.route.js";
 import addressRouter from "./routes/address.route.js";
 import orderRouter from "./routes/order.route.js";
 import allOrderRouter from "./routes/allOrder.route.js";
+import authRouter from "./routes/authRouter.js";
 
 const app = express();
 app.use(cors({
@@ -45,7 +46,7 @@ app.use('/api/cart',cartRouter)
 app.use('/api/address',addressRouter)
 app.use('/api/order',orderRouter)
 app.use('/api/allorder',allOrderRouter)
-
+app.use('/auth',authRouter)
 connectDB().then(() => {
     app.listen(PORT, () => {
         console.log(`listen to the port ${PORT}`)
