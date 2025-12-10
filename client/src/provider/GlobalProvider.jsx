@@ -135,12 +135,22 @@ const GlobalProvider = ({ children }) => {
     } catch (error) {}
   };
 
-  // REFETCH on user change
   useEffect(() => {
-    fetchCartItem();
-    handlelogoutOut();
-    fetchAddress();
-  }, [user]);
+    if (user?._id) {
+        fetchCartItem();
+        fetchAddress();
+    } else {
+        dispatch(handleAddItemCart([]));  // CART CLEAR
+    }
+}, [user]);
+
+
+  // REFETCH on user change
+  // useEffect(() => {
+  //   fetchCartItem();
+  //   handlelogoutOut();
+  //   fetchAddress();
+  // }, [user]);
 
   return (
     <GlobalContext.Provider
